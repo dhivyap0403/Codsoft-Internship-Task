@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void printBoard(const vector<vector<char>>& board) {
+void printboard(const vector<vector<char>>& board) {
     for (const auto& row : board) {
         for (char cell : row) {
             cout << cell << " ";
@@ -12,7 +12,7 @@ void printBoard(const vector<vector<char>>& board) {
     }
 }
 
-bool checkWinner(const vector<vector<char>>& board, char player) {
+bool checkwinner(const vector<vector<char>>& board, char player) {
     
     for (int i = 0; i < 3; ++i) {
         if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
@@ -29,7 +29,7 @@ bool checkWinner(const vector<vector<char>>& board, char player) {
     return false;
 }
 
-bool isBoardFull(const vector<vector<char>>& board) {
+bool isboardFull(const vector<vector<char>>& board) {
     for (const auto& row : board) {
         for (char cell : row) {
             if (cell == ' ') {
@@ -56,9 +56,9 @@ int main() {
         }
 
         board[row - 1][col - 1] = currentPlayer;
-        printBoard(board);
+        printboard(board);
 
-        if (checkWinner(board, currentPlayer)) {
+        if (checkwinner(board, currentPlayer)) {
             cout << "Player " << currentPlayer << " wins!" << endl;
             gameOver = true;
         } else if (isBoardFull(board)) {
